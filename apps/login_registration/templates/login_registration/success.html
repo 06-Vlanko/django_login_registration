@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'login_registration/skeleton.css' %}">
+        <link rel="stylesheet" href="{% static 'login_registration/normalize.css' %}">
+        <link rel="stylesheet" href="{% static 'login_registration/style.css' %}">
+        <title>Login and Reg</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Success! Welcome, {{request.session.name}}!</h1>
+            {% if 'created_user' in request.session %}
+                <p>Successfully registered!</p>
+            {% else %}
+                <p>Successfully logged in!</p>
+            {% endif %}
+            <a href="/">Go Back</a>
+        </div>
+    </body>
+</html>
